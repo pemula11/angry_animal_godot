@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxhoraopl7ins"]
+
+[ext_resource type="Texture2D" uid="uid://r1g4upak6nwg" path="res://assets/env/MainBG.png" id="1_g1f68"]
+[ext_resource type="LabelSettings" uid="uid://bd5i2otylsqtu" path="res://LG_72_TITLE.tres" id="2_jrv4o"]
+[ext_resource type="AudioStream" uid="uid://cb0yqmfyu2gi0" path="res://assets/audio/birdsong.wav" id="3_8s5fa"]
+[ext_resource type="PackedScene" uid="uid://d1nc1icl68l6n" path="res://UI/level_button.tscn" id="4_ic3cs"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_g1f68")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+rotation = 0.0349066
+theme_override_constants/margin_top = 48
+
+[node name="Label" type="Label" parent="MC"]
+layout_mode = 2
+text = "ANGRY ANIMAL"
+label_settings = ExtResource("2_jrv4o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BirdSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8s5fa")
+autoplay = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="LevelButton" parent="HBoxContainer" instance=ExtResource("4_ic3cs")]
+layout_mode = 2
+
+[node name="LevelButton2" parent="HBoxContainer" instance=ExtResource("4_ic3cs")]
+layout_mode = 2
+level_number = 2
+
+[node name="LevelButton3" parent="HBoxContainer" instance=ExtResource("4_ic3cs")]
+layout_mode = 2
+level_number = 3
